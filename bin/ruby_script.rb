@@ -24,6 +24,10 @@ def yell_greeting(string)
     name = name.upcase
     greeting = "WASSAP, #{name}!"
     puts greeting
+    p greeting
+    pp greeting
+    p greeting.class
+    p greeting.methods - Object.instance_methods
 end
 
 yell_greeting('test')
