@@ -2,13 +2,19 @@
 # an argument and substrings, will return a hash listing and count
 
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
-test_string = "Howdy partner, sit down! How's it going?"
+test_string = "Howy partner, sit down! How's it going?"
 
 def substring(string, dictionary)
-    dictionary.each do |word|
-        p word if string.include?(word)
+    string = string.downcase
+    output = dictionary.reduce(Hash.new(0)) do |count, word|
+        if string.include?(word.to_s.downcase)
+            count[word.downcase] += 1
+            count
+        else
+            count
+        end
     end
-
+    p output
 end
 
 substring(test_string, dictionary)
