@@ -32,6 +32,15 @@ class MyCar
         p self.colour
     end
 
+    def self.mileage (tank_size, range)
+        p range/tank_size
+    end
+
+    def to_s # will be called automatically on puts
+        "My cas is a #{colour}, #{year}, #{@model}!"
+    end
+
+
 end
 
 lumina = MyCar.new(1997, 'chevy lumina', 'white')
@@ -49,3 +58,20 @@ lumina.colour = 'red'
 p lumina.colour
 p lumina.year
 lumina.spray_paint('black')
+MyCar.mileage(30,500)
+
+my_car= MyCar.new("2010", "silver", "Ford Focus",)
+puts my_car # automatically uses newly defined #to_s # => My car is a silver, 2010, Ford Focus.
+
+
+class Person
+    attr_accessor :name
+    def initialize(name)
+      @name = name
+    end
+  end
+  
+  bob = Person.new("Steve")
+  p bob.name
+  bob.name = "Bob"
+  p bob.name
