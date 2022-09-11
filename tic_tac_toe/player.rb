@@ -16,10 +16,13 @@ class Player
   end
 
   def player_move
-    p "#{@turn}, it is your turn, place your symbol (0-9):"
-    begin @move = Kernel.gets.match(/\d{1}/)[0].to_i
-    rescue StandardError
-      puts 'Erroneous input! Try again...'
+    while @move.nil?
+      p "#{@turn}, it is your turn, place your symbol (1-9):"
+      begin
+        @move = Kernel.gets.match(/\d{1}/)[0].to_i
+      rescue StandardError
+        puts 'Erroneous input! Try again...'
+      end
     end
   end
 

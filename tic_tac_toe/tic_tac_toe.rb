@@ -22,5 +22,6 @@ while players.turn_num < 9
   tic_tac_toe.update_board
   players.turn_changer
   tic_tac_toe.legal = false
+  players.move = nil
 end
 tic_tac_toe.game = false
