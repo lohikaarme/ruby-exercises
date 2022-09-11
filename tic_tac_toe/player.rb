@@ -12,6 +12,7 @@ class Player
     @p2_sym = 'O'
     @turn = @p1
     @turn_num = 0
+    @move = nil
   end
 
   def player_move

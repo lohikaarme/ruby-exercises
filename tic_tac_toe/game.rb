@@ -32,8 +32,4 @@ class Game
     p @legal
   end
 
-  def legal_move
-    @board[@row][@column].nil?
-  end
-
 end
