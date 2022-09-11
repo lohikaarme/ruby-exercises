@@ -5,19 +5,18 @@
 class Game
   attr_accessor :turn, :game, :board, :legal
 
-  def initialize
+  def initialize(init_obj)
     @game = true
     @board = [
-      [nil, nil, nil],
-      [nil, nil, nil],
-      [nil, nil, nil]
+      [init_obj, init_obj, init_obj],
+      [init_obj, init_obj, init_obj],
+      [init_obj, init_obj, init_obj]
     ]
     @legal = false
   end
 
-  def update_board
-    @board[@row][@column] = 'X'
-    p @board[@row][@column]
+  def update_board(player)
+    @board[@row][@column] = player
   end
 
   def location_mapper(location)
@@ -27,6 +26,6 @@ class Game
 
   def legal_move(input)
     location_mapper(input)
-    @legal = @board[@row][@column].nil?
+    @legal = true if @board[@row][@column][:legal_move] == true
   end
 end

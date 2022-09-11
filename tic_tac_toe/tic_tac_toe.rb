@@ -9,8 +9,8 @@ require_relative 'render'
 
 # binding.pry
 
-tic_tac_toe = Game.new
 players = Player.new
+tic_tac_toe = Game.new(players.p0)
 
 while players.turn_num <= 9
   unless tic_tac_toe.legal
@@ -19,7 +19,7 @@ while players.turn_num <= 9
     tic_tac_toe.legal_move(players.move)
     redo
   end
-  tic_tac_toe.update_board # (players.turn_sym)
+  tic_tac_toe.update_board(players.turn)
   players.turn_changer
   tic_tac_toe.legal = false
   players.move = nil
