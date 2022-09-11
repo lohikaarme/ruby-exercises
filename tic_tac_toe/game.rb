@@ -1,19 +1,20 @@
 # frozen_string_literal: true
 
+# game logic and win/lose conditions
 
 class Game
-  attr_accessor :turn, :game
+  attr_accessor :turn, :game, :board
 
-  def initialize(p1_name = 'P1', p2_name = 'P2')
+  def initialize()
     @game = true
-    @p1 = p1_name
-    @p2 = p2_name
-    @p1_sym = 'X'
-    @p2_sym = 'O'
-    @turn = @p1
-    p @p1
-    p @p2
-    p @turn
+    @board = [
+       [nil,nil,nil],
+       [nil,nil,nil],
+       [nil,nil,nil],
+    ]
+
+    p @game
+    p @board
   end
 
 

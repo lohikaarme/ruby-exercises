@@ -1,9 +1,20 @@
 # frozen_string_literal: true
+
+# player actions and inputs
+
 class Player
+    
+  def initialize(p1_name = 'P1', p2_name = 'P2')
+    @p1 = p1_name
+    @p2 = p2_name
+    @p1_sym = 'X'
+    @p2_sym = 'O'
+  end
+  
   def player_move
     i = true
     while i
-      p "#{Game.turn} it is your turn, place your symbol (0-9):"
+      p "it is your turn, place your symbol (0-9):"
       begin
         @move = Kernel.gets.match(/\d{1}/)[0]
       rescue StandardError
