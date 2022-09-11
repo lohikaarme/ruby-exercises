@@ -16,8 +16,17 @@ class Game
   end
 
   def update_board(input)
+<<<<<<< HEAD
     @board[@row][@column] = 'X'
     p @board[@row][@column]
+=======
+    location_mapper(input)
+    if legal_move 
+      @board[@row][@column] = 'X'
+    else 
+      p 'Illegal move!'   
+    end
+>>>>>>> 371f4a4181ec67f7b28e50043db025f612795f99
   end
   
   def location_mapper(location)
@@ -29,6 +38,10 @@ class Game
     location_mapper(input)
     @legal = @board[@row][@column].nil?
     p @legal
+  end
+
+  def legal_move
+    @board[@row][@column].nil?
   end
 
 end
