@@ -28,6 +28,5 @@ class Game
   def legal_move(input)
     location_mapper(input)
     @legal = @board[@row][@column].nil?
-    p 'Illegal move, please try again'
   end
 end
