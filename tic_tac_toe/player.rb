@@ -2,7 +2,7 @@
 
 # player actions and inputs
 class Player
-  attr_accessor :move
+  attr_accessor :move, :turn_num
   attr_reader :p1, :p2, :p1_sym, :p2_sym
 
   def initialize(p1_name = 'P1', p2_name = 'P2')
@@ -24,7 +24,6 @@ class Player
         puts 'Erroneous input! Try again...'
       else
         i = false
-        turn_changer
       end
     end
   end
