@@ -16,20 +16,19 @@ class Game
     @legal = false
   end
 
-  def update_board(input)
+  def update_board
     @board[@row][@column] = 'X'
     p @board[@row][@column]
   end
-  
+
   def location_mapper(location)
-    @row = (location/3.0).ceil - 1
+    @row = (location / 3.0).ceil - 1
     @column = location - (@row * 3) - 1
   end
-  
+
   def legal_move(input)
     location_mapper(input)
     @legal = @board[@row][@column].nil?
-    p @legal
+    p 'Illegal move, please try again'
   end
-
 end

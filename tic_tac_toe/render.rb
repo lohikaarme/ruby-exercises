@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# printing to console
 class Render
   def self.print_board(board)
     p board[0]

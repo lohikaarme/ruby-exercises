@@ -30,14 +30,12 @@ class Player
   end
 
   def turn_changer
-    @turn_num =
-      if @turn_num.zero?
-        1
+    @turn =
+      if @turn == @p1
+        @p2
       else
-        0
+        @p1
       end
-    players = [@p1, @p2]
-    @turn = players[@turn_num]
-    p @turn_num
+    @turn_num += 1
   end
 end
