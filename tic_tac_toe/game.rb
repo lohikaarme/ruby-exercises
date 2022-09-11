@@ -3,7 +3,6 @@
 
 # comment here?
 class Game
-  # comment here?
   attr_accessor :turn, :game, :board, :legal
 
   def initialize
