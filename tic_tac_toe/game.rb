@@ -13,16 +13,11 @@ class Game
       [nil, nil, nil],
       [nil, nil, nil]
     ]
-
-    p @game
-    p @board
   end
 
   def update_board(location)
-    puts "test"
-    p row = (location/3.0).ceil - 1
-    p column = location - (row * 3) - 1
+    row = (location/3.0).ceil - 1
+    column = location - (row * 3) - 1
     @board[row][column] = 'X'
-    p @board
   end
 end

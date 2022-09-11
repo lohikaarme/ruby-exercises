@@ -12,13 +12,11 @@ require_relative 'render'
 tic_tac_toe = Game.new
 players = Player.new
 
-p tic_tac_toe.game
-p players
-
 while tic_tac_toe.game
   players.player_move
   tic_tac_toe.update_board(players.move)
-  
+  Render.print_board(tic_tac_toe.board)
+
 
   tic_tac_toe.game = false
 end
