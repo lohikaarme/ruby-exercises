@@ -15,9 +15,14 @@ class Game
     ]
   end
 
-  def update_board(location)
-    row = (location/3.0).ceil - 1
-    column = location - (row * 3) - 1
-    @board[row][column] = 'X'
+  def update_board(input)
+    location_mapper(input)
+    @board[@row][@column] = 'X'
   end
+
+  def location_mapper(location)
+    @row = (location/3.0).ceil - 1
+    @column = location - (@row * 3) - 1
+  end
+
 end
