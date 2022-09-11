@@ -18,5 +18,5 @@ while tic_tac_toe.game
   Render.print_board(tic_tac_toe.board)
 
 
-  tic_tac_toe.game = false
+  # tic_tac_toe.game = false
 end
