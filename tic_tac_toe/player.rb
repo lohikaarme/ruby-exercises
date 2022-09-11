@@ -31,7 +31,7 @@ class Player
 
   def turn_changer
     @turn_num =
-      if @turn_num.zero
+      if @turn_num.zero?
         1
       else
         0
