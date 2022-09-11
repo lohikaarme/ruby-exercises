@@ -21,14 +21,7 @@ while players.turn_num < 9
   tic_tac_toe.update_board(players.move)
   Render.print_board(tic_tac_toe.board)
   players.turn_changer
-  
   tic_tac_toe.legal = false
-
-<<<<<<< HEAD
-=======
-
-  # tic_tac_toe.game = false
->>>>>>> 371f4a4181ec67f7b28e50043db025f612795f99
 end
 tic_tac_toe.game = false
 
