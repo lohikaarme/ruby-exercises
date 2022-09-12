@@ -9,7 +9,7 @@ class Player
     @p0 = {
       player: 0,
       name: 'player_0',
-      symbol: 'Y',
+      symbol: ' ',
       legal_move: true
     }
     @p1 = {
