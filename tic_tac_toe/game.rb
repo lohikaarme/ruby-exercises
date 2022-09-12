@@ -29,12 +29,9 @@ class Game
     @legal = true if @board[@row][@column][:legal_move] == true
     if @legal
     else
-      puts "
-      
-      ---------------------------------------------
-      | Position #{input} is an illegal move, try again! |
-      ---------------------------------------------
-      "
+      puts "\n---------------------------------------------"
+      puts "| Position #{input} is an illegal move, try again! |"
+      puts '---------------------------------------------'
     end
   end
 end
