@@ -9,19 +9,19 @@ class Player
     @p0 = {
       player: 0,
       name: 'player_0',
-      symbol: ' ',
+      sym: ' ',
       legal_move: true
     }
     @p1 = {
       player: 1,
       name: p1_name,
-      symbol: 'X',
+      sym: 'X',
       legal_move: false
     }
     @p2 = {
       player: 2,
       name: p2_name,
-      symbol: 'X',
+      sym: 'O',
       legal_move: false
     }
     @turn = @p1

@@ -4,11 +4,19 @@
 class Render
   def self.print_board(board)
     puts "
-     #{board[0][0][:symbol]} | #{board[0][1][:symbol]} | #{board[0][2][:symbol]}
+     #{space_check(board, 0, 0, 1)} | #{space_check(board, 0, 1, 2)} | #{space_check(board, 0, 2, 3)}
     -----------
-     #{board[1][0][:symbol]} | #{board[1][1][:symbol]} | #{board[1][2][:symbol]}
+     #{space_check(board, 1, 0, 4)} | #{space_check(board, 1, 1, 5)} | #{space_check(board, 1, 2, 6)}
     -----------
-     #{board[2][0][:symbol]} | #{board[2][1][:symbol]} | #{board[2][2][:symbol]}
+     #{space_check(board, 2, 0, 7)} | #{space_check(board, 2, 1, 8)} | #{space_check(board, 2, 2, 9)}
     "
+  end
+
+  def self.space_check(board, row, column, idx)
+    if board[row][column][:legal_move]
+      idx
+    else
+      board[row][column][:sym]
+    end
   end
 end
