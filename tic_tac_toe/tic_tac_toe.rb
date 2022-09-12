@@ -12,7 +12,7 @@ require_relative 'render'
 players = Player.new
 tic_tac_toe = Game.new(players.p0)
 
-while players.turn_num <= 9
+while tic_tac_toe.game
   unless tic_tac_toe.legal
     Render.print_board(tic_tac_toe.board)
     players.player_move
