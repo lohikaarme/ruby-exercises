@@ -5,7 +5,7 @@ class Player
   attr_accessor :move, :turn_num, :turn_sym, :turn, :p0
   attr_reader :p1, :p2, :p1_sym, :p2_sym
 
-  def initialize(p1_name = 'P1', p2_name = 'P2')
+  def initialize(p1_name = 'Player1', p2_name = 'Player2')
     @p0 = {
       player: 0,
       name: 'player_0',
@@ -33,7 +33,7 @@ class Player
   def player_move
     i = true
     while i
-      p "#{@turn[:name]}, it is your turn, place your symbol (1-9):"
+      puts "#{@turn[:name]}, it is your turn, place your symbol (1-9):"
       begin
         @move = Kernel.gets.match(/\d{1}/)[0].to_i
       rescue StandardError

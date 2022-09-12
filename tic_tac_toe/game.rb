@@ -27,5 +27,14 @@ class Game
   def legal_move(input)
     location_mapper(input)
     @legal = true if @board[@row][@column][:legal_move] == true
+    if @legal
+    else
+      puts "
+      
+      ---------------------------------------------
+      | Position #{input} is an illegal move, try again! |
+      ---------------------------------------------
+      "
+    end
   end
 end
