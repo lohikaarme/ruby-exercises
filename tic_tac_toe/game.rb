@@ -41,7 +41,7 @@ class Game
   end
 
   def row_checker(board, player)
-    board.each { |row| p row[0] == player && row.uniq.size == 1 }
+    board.each { |row| puts "Player Wins" if row[0] == player && row.uniq.size == 1 }
   end
 
   def column_checker(board, player)
