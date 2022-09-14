@@ -35,7 +35,16 @@ class Game
     end
   end
 
-  def row_checker(player)
-    @board.each { |row| p row[0] == player && row.uniq.size == 1 }
+  def win_checker(player)
+    row_checker(@board, player)
+    column_checker(@board, player)
+  end
+
+  def row_checker(board, player)
+    board.each { |row| p row[0] == player && row.uniq.size == 1 }
+  end
+
+  def column_checker(board, player)
+    row_checker(board.transpose, player)
   end
 end

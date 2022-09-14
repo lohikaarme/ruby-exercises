@@ -20,7 +20,7 @@ while tic_tac_toe.game
     redo
   end
   tic_tac_toe.update_board(players.turn)
-  tic_tac_toe.row_checker(players.turn)
+  tic_tac_toe.win_checker(players.turn)
   players.turn_changer
   tic_tac_toe.legal = false
   players.move = nil
