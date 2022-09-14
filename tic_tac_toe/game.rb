@@ -34,4 +34,10 @@ class Game
       puts '---------------------------------------------'
     end
   end
+
+  def row_checker(player)
+    @board.each do |row|
+      p row[0] == player && row.uniq.size == 1
+    end
+  end
 end
