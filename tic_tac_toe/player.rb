@@ -37,7 +37,9 @@ class Player
       begin
         @move = Kernel.gets.match(/\d{1}/)[0].to_i
       rescue StandardError
-        puts 'Erroneous input! Try again...'
+        puts "\n-------------------------------"
+        puts '| Erroneous input, try again! |'
+        puts '-------------------------------'
       else
         i = false
       end
