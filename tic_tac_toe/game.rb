@@ -3,26 +3,7 @@
 
 # comment here?
 class Game
-  attr_accessor :turn, :game, :board, :legal
-
-  def initialize(init_obj)
-    @game = true
-    @board = [
-      [init_obj, init_obj, init_obj],
-      [init_obj, init_obj, init_obj],
-      [init_obj, init_obj, init_obj]
-    ]
-    @legal = false
-  end
-
-  def update_board(player)
-    @board[@row][@column] = player
-  end
-
-  def location_mapper(location)
-    @row = (location / 3.0).ceil - 1
-    @column = location - (@row * 3) - 1
-  end
+  attr_accessor :game, :board, :legal
 
   def legal_move(input)
     location_mapper(input)
@@ -35,10 +16,31 @@ class Game
     end
   end
 
-  def win_checker(player)
+  def update_board(player)
+    @board[@row][@column] = player
+  end
+
+  def game_checker(player)
     row_checker(@board, player)
     column_checker(@board, player)
     diagonal_checker(@board, player)
+  end
+
+  private
+
+  def initialize(init_obj)
+    @game = true
+    @board = [
+      [init_obj, init_obj, init_obj],
+      [init_obj, init_obj, init_obj],
+      [init_obj, init_obj, init_obj]
+    ]
+    @legal = false
+  end
+
+  def location_mapper(location)
+    @row = (location / 3.0).ceil - 1
+    @column = location - (@row * 3) - 1
   end
 
   def row_checker(board, player)
@@ -60,7 +62,7 @@ class Game
   end
 
   def win_state(player)
-    puts "#{player[:name]} Wins!"
+    puts "\n#{player[:name]} Wins!"
     puts 'Thank you for playing!'
     @game = false
   end

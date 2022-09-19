@@ -2,33 +2,8 @@
 
 # player actions and inputs
 class Player
-  attr_accessor :move, :turn_num, :turn_sym, :turn, :p0
-  attr_reader :p1, :p2, :p1_sym, :p2_sym
-
-  def initialize(p1_name = 'Player1', p2_name = 'Player2')
-    @p0 = {
-      player: 0,
-      name: 'player_0',
-      sym: ' ',
-      legal_move: true
-    }
-    @p1 = {
-      player: 1,
-      name: p1_name,
-      sym: 'X',
-      legal_move: false
-    }
-    @p2 = {
-      player: 2,
-      name: p2_name,
-      sym: 'O',
-      legal_move: false
-    }
-    @turn = @p1
-    @turn_sym = @p1_sym
-    @turn_num = 0
-    @move = nil
-  end
+  attr_accessor :move, :turn
+  attr_reader :p0, :p1, :p2, :turn_num
 
   def player_move
     i = true
@@ -54,5 +29,32 @@ class Player
         @p1
       end
     @turn_num += 1
+  end
+
+  private
+
+  def initialize(p1_name = 'Player1', p2_name = 'Player2')
+    @p0 = {
+      player: 0,
+      name: 'player_0',
+      sym: ' ',
+      legal_move: true
+    }
+    @p1 = {
+      player: 1,
+      name: p1_name,
+      sym: 'X',
+      legal_move: false
+    }
+    @p2 = {
+      player: 2,
+      name: p2_name,
+      sym: 'O',
+      legal_move: false
+    }
+    @turn = @p1
+    @turn_sym = @p1_sym
+    @turn_num = 0
+    @move = nil
   end
 end
