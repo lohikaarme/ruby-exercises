@@ -42,7 +42,9 @@ class Game
   end
 
   def row_checker(board, player)
-    board.each { |row| puts "#{player[:name]} Wins" if row[0] == player && row.uniq.size == 1 }
+    board.each do |row|
+      win_state(player) if row[0] == player && row.uniq.size == 1
+    end
   end
 
   def column_checker(board, player)
@@ -55,5 +57,11 @@ class Game
       [board[2][0], board[1][1], board[0][2]]
     ]
     row_checker(slash, player)
+  end
+
+  def win_state(player)
+    puts "#{player[:name]} Wins!"
+    puts 'Thank you for playing!'
+    @game = false
   end
 end
