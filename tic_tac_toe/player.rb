@@ -19,6 +19,7 @@ class Player
         i = false
       end
     end
+    puts "\e[H\e[2J"
   end
 
   def turn_changer
@@ -28,7 +29,6 @@ class Player
       else
         @p1
       end
-    @turn_num += 1
   end
 
   private
@@ -54,7 +54,6 @@ class Player
     }
     @turn = @p1
     @turn_sym = @p1_sym
-    @turn_num = 0
     @move = nil
   end
 end

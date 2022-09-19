@@ -8,7 +8,7 @@ require_relative 'player'
 require_relative 'render'
 
 # binding.pry
-
+puts "\e[H\e[2J"
 players = Player.new
 tic_tac_toe = Game.new(players.p0)
 
@@ -25,4 +25,4 @@ while tic_tac_toe.game
   tic_tac_toe.legal = false
   players.move = nil
 end
-tic_tac_toe.game = false
+Render.print_board(tic_tac_toe.board)

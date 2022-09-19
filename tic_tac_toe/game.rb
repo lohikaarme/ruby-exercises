@@ -18,24 +18,28 @@ class Game
 
   def update_board(player)
     @board[@row][@column] = player
+    @turn_num += 1
   end
 
   def game_checker(player)
     row_checker(@board, player)
     column_checker(@board, player)
     diagonal_checker(@board, player)
+    stalemate_checker
   end
 
   private
 
   def initialize(init_obj)
     @game = true
+    @turn_num = 0
     @board = [
       [init_obj, init_obj, init_obj],
       [init_obj, init_obj, init_obj],
       [init_obj, init_obj, init_obj]
     ]
     @legal = false
+    @won = false
   end
 
   def location_mapper(location)
@@ -62,7 +66,16 @@ class Game
   end
 
   def win_state(player)
-    puts "\n#{player[:name]} Wins!"
+    puts "#{player[:name]} Wins!"
+    puts 'Thank you for playing!'
+    @won = true
+    @game = false
+  end
+
+  def stalemate_checker
+    return unless @turn_num >= 9 && @won == false
+
+    puts 'Stalemate!'
     puts 'Thank you for playing!'
     @game = false
   end
