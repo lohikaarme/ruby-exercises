@@ -5,6 +5,7 @@ class Player
   attr_accessor :move, :turn
   attr_reader :p0, :p1, :p2, :turn_num
 
+  # rubocop:disable Metrics/MethodLength
   def player_move
     i = true
     while i
@@ -56,4 +57,6 @@ class Player
     @turn_sym = @p1_sym
     @move = nil
   end
+
+  # rubocop:enable Metrics/MethodLength
 end
